@@ -1,0 +1,33 @@
+{
+
+  "variables": {
+
+    "projectName" : {
+
+        "value" : "EDMT CDO",
+
+        "type": "String"
+
+    },
+
+    "projectCode" : {
+
+      "value" : "ABCD12345678",
+
+      "type": "string"
+
+    },
+
+     "vpApproval" : {
+
+      "value" : "",
+
+      "type": "string"
+
+    }
+
+  },
+
+ "businessKey" : "request1"
+
+}
