@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "b320c811-5dca-44ef-95ba-ce8211942538",
+		"name": "Camunda_TMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Validate User Credentials",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"vp123\",\r\n  \"password\": \"vp123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/engine-rest/identity/verify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"engine-rest",
+						"identity",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Group Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StartProcessInstance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"variables\": {\r\n    \"projectName\" : {\r\n        \"value\" : \"EDMT CDO\",\r\n        \"type\": \"String\"\r\n    },\r\n    \"projectCode\" : {\r\n      \"value\" : \"ABCD12345678\",\r\n      \"type\": \"string\"\r\n    },\r\n     \"vpApproval\" : {\r\n      \"value\" : \"\",\r\n      \"type\": \"string\"\r\n    },\r\n    \"requesID\" : {\r\n      \"value\" : \"REQ_123\",\r\n      \"type\": \"string\"\r\n    }\r\n  },\r\n \"businessKey\" : \"request1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/engine-rest/process-definition/TMSProcess_123:1:a3fd3c26-a701-11eb-b17d-e454e82ceaa1/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"engine-rest",
+						"process-definition",
+						"TMSProcess_123:1:a3fd3c26-a701-11eb-b17d-e454e82ceaa1",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Active Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Process Instance Variables",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Complete Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"variables\": {\n        \"workNotes\" : {\n      \"value\" : \"worknote 1\",\n      \"type\": \"string\"\n    },\n        \"vpApproval\": {\n            \"value\": \"APPROVED\",\n            \"type\": \"string\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/engine-rest/task/7ce2eca7-a892-11eb-9f6d-5e7fe44ad49f/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"engine-rest",
+						"task",
+						"7ce2eca7-a892-11eb-9f6d-5e7fe44ad49f",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
